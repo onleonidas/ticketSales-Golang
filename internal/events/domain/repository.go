@@ -1,9 +1,12 @@
 package domain
 
 type EventRepository interface {
-	FindEvents() ([]*Event, error)
-	FindEventByID(id string) (*Event, error)
-	FindSpotByID(id string) (*Spot, error)
+	ListEvents() ([]Event, error)
+	FindEventByID(eventID string) (*Event, error)
 	FindSpotsByEventID(eventID string) ([]*Spot, error)
-	ReserveSpot(spot *Spot) error
+	FindSpotByName(eventID, spotName string) (*Spot, error) // Atualizado
+	CreateEvent(event *Event) error
+	CreateSpot(spot *Spot) error
+	CreateTicket(ticket *Ticket) error
+	ReserveSpot(spotID, ticketID string) error
 }

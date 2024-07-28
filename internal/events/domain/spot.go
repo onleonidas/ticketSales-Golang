@@ -20,6 +20,7 @@ var (
 	ErrSpotStatusRequired   = errors.New("spot status is required")
 	ErrSpotTicketIDRequired = errors.New("spot ticket ID is required")
 	ErrSpotNameInvalid      = errors.New("spot name is invalid, must start with a letter and end with a number")
+	ErrSpotNotFound         = errors.New("spot not found")
 )
 
 type Spot struct {
